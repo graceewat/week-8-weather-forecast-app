@@ -73,3 +73,27 @@ function whattowear(temp) {
     clothingElement.innerHTML = `Winter coat time! Layer up 🥶`;
   }
 }
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+  let forecastHtml = "";
+  days.forEach(function (day) {
+    forecastHtml =
+      forecastHtml +
+      `<div class="row">
+  <div class="col-2">
+  <div class="weather-forecast-date">${day}</div>
+ <img
+src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-night.png"
+ width="42px"
+ />
+    <div class="weather-forecast-temp">
+  <span class="weather-forecast-max">18</span
+><span class="weather-forecast-min"> 12</span>
+</div>
+</div>
+</div>`;
+  });
+  forecastElement.innerHTML = forecastHtml;
+}
+displayForecast();
