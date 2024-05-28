@@ -96,6 +96,8 @@ main {
 .weather-forecast {
   margin-top: 25px;
   text-align: center;
+  display: flex;
+  justify-content: space-evenly;
 }
 .weather-forecast-date {
   font-size: 16px;
