@@ -103,6 +103,12 @@ main {
   color: #385170;
   opacity: 70%;
 }
+.weather-forecast-icon {
+  width: 76px;
+  height: 76px;
+  display: block;
+  margin: 0 auto;
+}
 .weather-forecast-temp {
   font-size: 13px;
   color: #f95959;
