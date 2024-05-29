@@ -19,8 +19,7 @@ header {
   padding-bottom: 30px;
   border-bottom: 1px solid #e3e3e3;
 }
-.search-form {
-}
+
 .search-form-input {
   background-color: #e3e3e3;
   border: none;
@@ -109,8 +108,7 @@ main {
   color: #f95959;
   font-weight: bold;
 }
-.weather-forecast-max {
-}
+
 .weather-forecast-min {
   opacity: 50%;
 }
