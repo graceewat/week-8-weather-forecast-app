@@ -5,7 +5,6 @@ function submitSearch(event) {
 }
 let searchFormElement = document.querySelector("#search-form");
 searchFormElement.addEventListener("submit", submitSearch);
-searchCity("London");
 
 function searchCity(city) {
   let apiKey = "f03c7t04000f0dbod331aeefa47ad1f6";
@@ -40,6 +39,8 @@ function refreshWeather(response) {
   iconElement.innerHTML = `<img
    src="${response.data.condition.icon_url}"
   class="weather-app-icon">`;
+
+  getForecast(response.data.city);
 }
 function formatDate(date) {
   let minutes = date.getMinutes();
@@ -73,7 +74,14 @@ function whattowear(temp) {
     clothingElement.innerHTML = `Winter coat time! Layer up 🥶`;
   }
 }
-function displayForecast() {
+function getForecast(city) {
+  let apiKey = "f03c7t04000f0dbod331aeefa47ad1f6";
+  let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}&units=metric`;
+  axios(apiUrl).then(displayForecast);
+}
+function displayForecast(response) {
+  console.log(response.data);
+
   let forecastElement = document.querySelector("#forecast");
   let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
   let forecastHtml = "";
@@ -96,4 +104,5 @@ src="https://shecodes-assets.s3.amazonaws.com/api/weather/icons/broken-clouds-ni
   });
   forecastElement.innerHTML = forecastHtml;
 }
-displayForecast();
+
+searchCity("London");
